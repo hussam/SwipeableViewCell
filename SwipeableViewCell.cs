@@ -17,24 +17,6 @@ namespace SwipeableViewCell
 		{
 			gr = new CellSwipeGestureRecognizer (this);
 			AddGestureRecognizer (gr);
-
-			var view = new UIView (CGRect.Empty);
-
-			SetSwipeGestureWithView (
-				view,
-				UIColor.Green,
-				SwipeTableCellMode.Exit,
-				SwipeTableViewCellState.StateRightShort,
-				(_cell, state, mode) => {}
-			);
-
-			SetSwipeGestureWithView (
-				view,
-				UIColor.Red,
-				SwipeTableCellMode.Exit,
-				SwipeTableViewCellState.StateLeftShort,
-				(_cell, state, mode) => {}
-			);
 		}
 
 		public override void PrepareForReuse ()
