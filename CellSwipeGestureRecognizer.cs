@@ -64,13 +64,13 @@ namespace SwipeableViewCell
 		public bool ShouldDrag { get; set; }
 		public bool ShouldAnimateIcons { get; set; }
 
-		const float kMCStopShort                    = 0.25F; // Percentage limit to trigger the first action
-		const float kMCStopLong                     = 0.75F; // Percentage limit to trigger the second action
-		const float kMCDamping                     	= 0.6F;  // Damping of the spring animation
-		const float kMCVelocity                    	= 0.9F;  // Velocity of the spring animation
-		const double kMCAnimationDuration           = 0.4;   // Duration of the animation
-		const double kMCDurationLowLimit    	  	= 0.25;  // Lowest duration when swiping the cell because we try to simulate velocity
-		const double kMCDurationHighLimit    		= 0.1;   // Highest duration when swiping the cell because we try to simulate velocity
+		const float kMCStopShort            = 0.25F; // Percentage limit to trigger the first action
+		const float kMCStopLong             = 0.75F; // Percentage limit to trigger the second action
+		const float kMCDamping              = 0.6F;  // Damping of the spring animation
+		const float kMCVelocity             = 0.9F;  // Velocity of the spring animation
+		const double kMCAnimationDuration   = 0.4;   // Duration of the animation
+		const double kMCDurationLowLimit    = 0.25;  // Lowest duration when swiping the cell because we try to simulate velocity
+		const double kMCDurationHighLimit   = 0.1;   // Highest duration when swiping the cell because we try to simulate velocity
 
 		enum SwipeTableViewCellDirection {
 			Left,
