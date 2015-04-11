@@ -136,7 +136,7 @@ namespace SwipeableViewCell
 			Velocity = kMCVelocity;
 			AnimationDuration = kMCAnimationDuration;
 
-			DefaultColor = UIColor.White;
+			DefaultColor = UIColor.FromRGB (189, 195, 199);
 
 			ModeForStateRightShort = SwipeTableCellMode.None;
 			ModeForStateRightLong = SwipeTableCellMode.None;
@@ -479,11 +479,12 @@ namespace SwipeableViewCell
 		{
 			var percentage = percentageWithOffset (offset, cell.Bounds.Width);
 			var view = viewWithPercentage (percentage);
+			var alpha = alphaWithPercentage (percentage);
 
 			// View Position.
 			if (view != null) {
 				setViewofSlidingView (view);
-				slidingView.Alpha = alphaWithPercentage (percentage);
+				slidingView.Alpha = alpha;
 				slideViewWithPercentage (percentage, view, ShouldAnimateIcons);
 			}
 
@@ -491,6 +492,7 @@ namespace SwipeableViewCell
 			UIColor color = colorWithPercentage (percentage);
 			if (color != null) {
 				colorIndicatorView.BackgroundColor = color;
+				colorIndicatorView.Alpha = alpha;
 			}
 
 		}
