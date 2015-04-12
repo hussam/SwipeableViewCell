@@ -8,6 +8,8 @@ namespace SwipeableViewCell
 	{
 		CellSwipeGestureRecognizer gr;
 
+		public bool ResetSwipingOnPrepareForReuse { get; set; }
+
 		public CellSwipeGestureRecognizer CellSwipeGestureRecognizer {
 			get { return gr; }
 		}
@@ -15,6 +17,7 @@ namespace SwipeableViewCell
 		[Export("initWithStyle:reuseIdentifier:")]
 		public SwipeableViewCell(UITableViewCellStyle style, string reuseIdentifier) : base(style, reuseIdentifier)
 		{
+			ResetSwipingOnPrepareForReuse = true;
 			gr = new CellSwipeGestureRecognizer (this);
 			AddGestureRecognizer (gr);
 		}
@@ -22,7 +25,9 @@ namespace SwipeableViewCell
 		public override void PrepareForReuse ()
 		{
 			base.PrepareForReuse ();
-			gr.PrepForReuse (this);
+			if (ResetSwipingOnPrepareForReuse) {
+				gr.PrepForReuse (this);
+			}
 		}
 
 		public void SetSwipeGestureWithView(UIView view, UIColor color, SwipeTableCellMode mode, SwipeTableViewCellState state, SwipeCompletionBlock completionBlock)
