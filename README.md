@@ -68,7 +68,7 @@ public class MyCell : SwipeableViewCell
 
 Hussam Abu-Libdeh
 
-- http://github.com/hussamal
+- http://github.com/hussam
 - http://twitter.com/hussam
 
 ## Acknowledgement
