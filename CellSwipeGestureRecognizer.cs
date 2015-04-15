@@ -479,12 +479,11 @@ namespace SwipeableViewCell
 		{
 			var percentage = percentageWithOffset (offset, cell.Bounds.Width);
 			var view = viewWithPercentage (percentage);
-			var alpha = alphaWithPercentage (percentage);
 
 			// View Position.
 			if (view != null) {
 				setViewofSlidingView (view);
-				slidingView.Alpha = alpha;
+				slidingView.Alpha = alphaWithPercentage (percentage);
 				slideViewWithPercentage (percentage, view, ShouldAnimateIcons);
 			}
 
@@ -492,7 +491,6 @@ namespace SwipeableViewCell
 			UIColor color = colorWithPercentage (percentage);
 			if (color != null) {
 				colorIndicatorView.BackgroundColor = color;
-				colorIndicatorView.Alpha = alpha;
 			}
 
 		}
